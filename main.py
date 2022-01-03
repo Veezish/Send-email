@@ -1,9 +1,8 @@
 import yagmail
 import os
-from time import time, sleep
+import time
 
 while True:
-  sleep(60 - time()%60)
   sender = "testm0410@gmail.com"
   receiver = "vdoztlik@sharklasers.com"
 
@@ -15,3 +14,4 @@ while True:
   yag = yagmail.SMTP(user=sender, password=os.getenv("PASSWORD2"))
   yag.send(to=receiver, subject=subjects, contents=content)
   print("Email sent")
+  time.sleep(60)
